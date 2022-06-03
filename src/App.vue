@@ -1,17 +1,12 @@
+<script setup>
+import HeaderComp from "@/components/template/HeaderComp.vue";
+import FooterComp from "@/components/template/FooterComp.vue";
+</script>
+
 <template>
-  <header>
-    <div class="menu-esquerdo">
-      <span>Home</span>
-      <span>|</span>
-      <span>Jogadores</span>
-      <span>|</span>
-      <span>Time</span>
-    </div>
-    <div class="menu-direito">
-      <span>Sair</span>
-    </div>
-  </header>
+  <HeaderComp />
   <RouterView />
+  <FooterComp />
 </template>
 
 <style>
@@ -28,24 +23,16 @@
   font-family: "Cormorant Garamond", serif;
 }
 
-header,
-footer {
-  height: 10%;
-  background-color: rgb(171, 76, 135);
-  color: black;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-
-  justify-content: space-between;
-}
-
 main {
   height: 80%;
 }
 
-header span {
-  padding: 0 20px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
+
+/* .router-link-active {
+  color: rgb(38, 83, 83);
+} */
 </style>

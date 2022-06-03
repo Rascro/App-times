@@ -1,4 +1,3 @@
 <template>
-  <main>Bem Vindo</main>
-  <footer>rodapé</footer>
+  <main><h1>Bem Vindo</h1></main>
 </template>

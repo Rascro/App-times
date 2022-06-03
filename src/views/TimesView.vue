@@ -1,4 +1,3 @@
 <template>
-  <main>Times</main>
-  <footer>rodapé</footer>
+  <main><h1>Times</h1></main>
 </template>
