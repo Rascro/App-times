@@ -7,6 +7,17 @@
       <input type="text" />
       <button>Salvar</button>
     </div>
+    <div class="list-times">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
   </div>
 </template>
 <style> 
