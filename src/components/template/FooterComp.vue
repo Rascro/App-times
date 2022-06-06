@@ -1,5 +1,5 @@
 <template>
-  <footer><img src="@/assets/img/instagram.png" alt="" /></footer>
+  <footer>Rodape</footer>
 </template>
 
 <style>
@@ -12,12 +12,5 @@ footer {
   align-items: center;
   padding-left: 20px;
   border-radius: 10px;
-}
-
-img {
-  height: 45px;
-  display: flex;
-  align-items: center;
-  padding-left: 300px;
 }
 </style>

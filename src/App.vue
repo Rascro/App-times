@@ -5,7 +5,9 @@ import FooterComp from "@/components/template/FooterComp.vue";
 
 <template>
   <HeaderComp />
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
   <FooterComp />
 </template>
 
@@ -15,16 +17,13 @@ import FooterComp from "@/components/template/FooterComp.vue";
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  height: 100vh;
+  height: 98vh;
   font-weight: normal;
-}
-
-* {
   font-family: "Cormorant Garamond", serif;
 }
 
 main {
-  height: 80%;
+  height: 78%;
 }
 
 a {
