@@ -14,4 +14,27 @@
   text-align: center;
   margin: 2rem 0;
 }
+
+.form-input {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.form-input input {
+  width: 50%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.form-input button {
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: black;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 1%;
+}
 </style>
