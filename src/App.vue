@@ -17,7 +17,7 @@ import FooterComp from "@/components/template/FooterComp.vue";
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  height: 98vh;
+  height: 97vh;
   font-weight: normal;
   font-family: "Cormorant Garamond", serif;
 }

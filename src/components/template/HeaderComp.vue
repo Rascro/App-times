@@ -16,7 +16,7 @@
 <style>
 header {
   height: 10%;
-  background-color: rgb(171, 76, 135);
+  background-color: rgb(6, 103, 40);
   color: black;
   font-size: 1.3rem;
   display: flex;
