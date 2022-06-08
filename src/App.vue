@@ -31,7 +31,7 @@ a {
   text-decoration: none;
 }
 
-/* .router-link-active {
-  color: rgb(38, 83, 83);
-} */
+.router-link-active {
+  color: rgb(17, 206, 0);
+}
 </style>
