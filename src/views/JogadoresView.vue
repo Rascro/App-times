@@ -9,7 +9,7 @@ export default {
         { id: "2148db23-7480-40d7-9cea-ae5876b01886", nome: "jogador3", timeid:"003"},
       ],
       novo_jogador: "",
-      novo_idtimes: "",
+      novo_times: "",
     };
   },
   methods: {
@@ -19,7 +19,7 @@ export default {
         {
           id: novo_id,
           nome: this.novo_jogador,
-          timeid: this.novo_idtimes
+          time: this.novo_times
         }
       );
     },
@@ -35,7 +35,7 @@ export default {
       </div>
       <div class="form-input">
         <input type="text" placeholder="jogador" v-model="novo_jogador" />
-        <input type="text" placeholder="time" v-model="novo_idtimes" />
+        <input type="text" placeholder="time" v-model="novo_times" />
         <button @click="salvar">Salvar</button>
       </div>
       <div class="list-times">
@@ -53,7 +53,7 @@ export default {
             <tr v-for="jogador in jogadores" :key="jogador.id">
               <td>{{ jogador.id }}</td>
               <td>{{ jogador.nome }}</td>
-              <td>{{ jogador.timeid }}</td>
+              <td>{{ jogador.time }}</td>
               <td>???</td>
             </tr>
           </tbody>
