@@ -14,7 +14,7 @@ export default {
   methods: {
     async salvar() {
       const time = {
-        time: this.novo_time,
+        nome: this.novo_time,
       };
       const time_criado = await axios.post("http://localhost:4000/times", time);
       this.times.push(time_criado.data);
