@@ -1,27 +1,28 @@
 <script>
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 export default {
   data() {
     return {
-      jogadores: [
-        { id: "c11556b2-18d2-48d7-ac95-df6d0431f3e6", nome: "jogador1", timeid:"001"},
-        { id: "0204d8f7-52a5-463b-9d6f-3cf6d5ecffe9", nome: "jogador2", timeid:"002"},
-        { id: "2148db23-7480-40d7-9cea-ae5876b01886", nome: "jogador3", timeid:"003"},
-      ],
-      novo_jogador: "",
-      novo_times: "",
+      jogadores: [],
+      jogador: {},
+      times: [],
     };
   },
+  async created() {
+    await this.buscarTodosOsJogadores();
+    const times = await axios.get("http://localhost:4000/times");
+    this.times = times.data;
+  },
   methods: {
-    salvar() {
-      const novo_id = uuidv4();
-      this.jogadores.push(
-        {
-          id: novo_id,
-          nome: this.novo_jogador,
-          time: this.novo_times
-        }
+    async buscarTodosOsJogadores() {
+      const jogadores = await axios.get(
+        "http://localhost:4000/jogadores?expand=time"
       );
+      this.jogadores = jogadores.data;
+    },
+    async salvar() {
+      await axios.post("http://localhost:4000/jogadores", this.jogador);
+      await this.buscarTodosOsJogadores();
     },
   },
 };
@@ -34,8 +35,22 @@ export default {
         <h2>Gerenciamento de times</h2>
       </div>
       <div class="form-input">
-        <input type="text" placeholder="jogador" v-model="novo_jogador" />
-        <input type="text" placeholder="time" v-model="novo_times" />
+        <input type="text" placeholder="jogador" v-model="jogador.nome" />
+        <input
+          type="text"
+          placeholder="ano de nascimento"
+          v-model="jogador.anoNascimento"
+        />
+        <input
+          type="text"
+          placeholder="posição"
+          v-model="jogador.posicaoJogo"
+        />
+        <select v-model="jogador.timeId">
+          <option v-for="time in times" :key="time.id" :value="time.id">
+            {{ time.nome }}
+          </option>
+        </select>
         <button @click="salvar">Salvar</button>
       </div>
       <div class="list-times">
@@ -44,20 +59,23 @@ export default {
             <tr>
               <th>ID</th>
               <th>Nome</th>
-              <th>Time.id</th>
+              <th>Ano Nascimento</th>
+              <th>Posição de jogador</th>
+              <th>Time</th>
               <th>Ações</th>
             </tr>
           </thead>
-          
+
           <tbody>
             <tr v-for="jogador in jogadores" :key="jogador.id">
               <td>{{ jogador.id }}</td>
               <td>{{ jogador.nome }}</td>
-              <td>{{ jogador.time }}</td>
+              <td>{{ jogador.anoNascimento }}</td>
+              <td>{{ jogador.posicaoJogo }}</td>
+              <td>{{ jogador.time.nome }}</td>
               <td>???</td>
             </tr>
           </tbody>
-
         </table>
       </div>
     </div>
@@ -119,4 +137,3 @@ table tbody tr:nth-child(odd) {
   background-color: #ccc;
 }
 </style>
-
