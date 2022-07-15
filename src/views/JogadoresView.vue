@@ -15,9 +15,7 @@ export default {
   },
   methods: {
     async buscarTodosOsJogadores() {
-      const jogadores = await axios.get(
-        "http://localhost:4000/jogadores?expand=time"
-      );
+      const jogadores = await axios.get("//localhost:4000/jogadores?expand=time");
       this.jogadores = jogadores.data;
     },
     async salvar() {
